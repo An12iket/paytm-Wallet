@@ -1,8 +1,7 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const rootRouter = require("./routes/index");
-const JWT_SECRET = process.env.JWT_SECRET;
-require('dotenv').config();
 const app = express();
 
 app.use(cors());
