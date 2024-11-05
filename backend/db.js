@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://admin:admin%401234@cluster0.82mjkhz.mongodb.net/');
+mongoose.connect('mongodb+srv://admin:admin%401234@cluster0.82mjkhz.mongodb.net/paytm');
 
 // Schema
 const userSchema = new mongoose.Schema({
