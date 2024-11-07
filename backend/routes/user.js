@@ -63,7 +63,7 @@ const signinBody = zod.object({
     password: zod.string()
 })
 
-router.post("signin", async (req, res) => {
+router.post("/signin", async (req, res) => {
     
     const { success } = signinBody.safeParse(req.body);
     if(!success){
