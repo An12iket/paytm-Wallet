@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const router = express.Router();
 const zod = require("zod");
-const { User } = require('../db');
+const { User, Account } = require('../db');
 const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("../middleware");
 const JWT_SECRET  = process.env.JWT_SECRET;
@@ -40,6 +40,12 @@ router.post("/signup", async (req, res) => {
         lastname: req.body.lastName
     })
     const userId = user._id;
+
+    // Creating new Account
+    await Account.create({
+        userId,
+        balance: 1 + Math.random() * 10000
+    })
 
     const token = jwt.sign({
         userId
