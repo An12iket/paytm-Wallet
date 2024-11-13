@@ -38,8 +38,8 @@ Ensure that you have the following installed:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
-    cd your-repo-name
+    git clone https://github.com/an12iket/paytm-wallet.git
+    cd paytm-wallet
     ```
 
 2. Install backend dependencies:
