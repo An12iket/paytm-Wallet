@@ -85,4 +85,10 @@ Ensure that you have the following installed:
 
 - **JWT Authentication**: Ensures protected routes are accessible only to authenticated users.
 
-## Folder Structure
+## Contributing
+
+Feel free to fork this project, create new features, or report issues by opening a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
