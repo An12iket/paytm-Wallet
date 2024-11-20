@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 const MongoURL = process.env.MONGO_URL;
-mongoose.connect(MongoURL)
+mongoose.connect("mongodb+srv://admin:admin%401234@cluster0.82mjkhz.mongodb.net/paytm")
 .then(() => console.log("MongoDB connected"))
 .catch((err) => console.error("MongoDB connection error: ", err));
 
