@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const jwtSecret = process.env.JWT_SECRET;
+const JWT_SECRET = "Aniket1234";
 
 const authMiddleware = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -11,7 +11,7 @@ const authMiddleware = (req, res, next) => {
     const token = authHeader.split(' ')[1];
 
     try {
-        const decoded = jwt.verify(token, jwtSecret);
+        const decoded = jwt.verify(token, JWT_SECRET);
 
         if(!decoded.userId){
             req.userId = decoded.userId;
