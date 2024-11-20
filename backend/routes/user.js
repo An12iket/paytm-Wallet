@@ -1,12 +1,11 @@
 const express = require("express");
-require('dotenv').config();
 
 const router = express.Router();
 const zod = require("zod");
 const { User, Account } = require('../db');
 const jwt = require("jsonwebtoken");
 const { authMiddleware } = require("../middleware");
-const JWT_SECRET  = process.env.JWT_SECRET;
+const JWT_SECRET  = "Aniket1234";
 
 const signupBody = zod.object({
     username: zod.string().email(),
