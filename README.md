@@ -5,7 +5,15 @@ A full-stack wallet application built using the MERN (MongoDB, Express.js, React
 ## Features
 
 - User signup and login with JWT authentication
+  
+![screenshot](images/Signup.png)
+
 - Wallet functionality (balance management, transaction history)
+  
+![screenshot](images/Dashboard.png)
+
+![screenshot](images/Send.png)
+
 - Secure data handling using Zod validation
 - MongoDB for persistent data storage
 - Recoil for global state management in the frontend
