@@ -84,10 +84,10 @@ Ensure that you have the following installed:
 
 ## API Routes
 
-- **POST** `/api/signup`: User registration
-- **POST** `/api/login`: User login (returns JWT)
-- **GET** `/api/wallet`: Get wallet balance (Protected)
-- **POST** `/api/wallet/transaction`: Add transaction (Protected)
+- **POST** `/api/v1/user/signup`: User registration
+- **POST** `/api/v1/user/signin`: User login (returns JWT)
+- **GET** `/api/v1/account/balance`: Get wallet balance (Protected)
+- **POST** `/api/v1/account/send`: Add transaction (Protected)
 
 ### Middleware
 
