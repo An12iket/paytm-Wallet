@@ -2,26 +2,22 @@ const jwt = require("jsonwebtoken");
 const JWT_SECRET = "Aniket1234";
 
 const authMiddleware = (req, res, next) => {
-    const authHeader = req.headers.authorization;
+    // Log the incoming Authorization header
+    const token = req.headers.authorization?.split(' ')[1];
+    console.log('Token:', token);  // Log token for debugging
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(403).json({ message: 'Authorization token missing or invalid' });
+    if (!token) {
+        return res.status(403).json({ message: 'No token provided' });
     }
 
-    const token = authHeader.split(' ')[1];
-
     try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-
-        if(!decoded.userId){
-            req.userId = decoded.userId;
-            next();
-        } else {
-            return res.status(403).json({Error: "Error in decoding token"});
-        }
-
-    } catch (err) {
-        return res.status(403).json({ message: 'Invalid token' });
+        const decoded = jwt.verify(token, JWT_SECRET);  // Verify token using secret
+        console.log('Decoded JWT:', decoded);  // Log the decoded token for debugging
+        req.userId = decoded.userId;  // Attach userId from decoded token to the request
+        next();  // Proceed to next middleware or route handler
+    } catch (error) {
+        console.error('JWT Decoding Error:', error);  // Log any decoding errors
+        return res.status(403).json({ message: 'Invalid or expired token' });
     }
 };
 
